@@ -1,5 +1,3 @@
-// Playground noun: a place where people can play
-
 //: ## Inspiration for Swift Playgrounds:
 //: * Bret Victor's [**Learnable Programming**](http://worrydream.com/#!/LearnableProgramming) concept (see also the talk [**Inventing on Principle**](http://worrydream.com/#!/InventingOnPrinciple))
 //: * [**Light Table**](http://lighttable.com/)
@@ -7,6 +5,7 @@
 import Cocoa
 
 //: ## Curried functions
+
 // Function currying can come in handy when adopting a functional style of programming (eg: when you have chains of unary functions)
 func offer(a thing: String)(to person: String) -> String {
     return "\(person): take a \(thing)"
@@ -25,6 +24,7 @@ let 🍻 = offer(a: "beer")
 
 
 //: ## Class extension
+
 // Methods and properties of the class extension will be available
 // anywhere the module declaring this extension is imported
 extension String {
@@ -45,6 +45,7 @@ extension String {
 
 
 //: ## Custom operators (❤)
+
 // Swift let us define custom operators, and even overload existing ones.
 // Every operator in Swift is just a function, with a UTF-8 symbol as name
 infix operator ❤ { associativity left precedence 140 }
@@ -59,6 +60,7 @@ func ❤ (lover1: String, lover2: String) -> String {
 
 
 //: ## The power of Playground in action
+
 // Playground's value history is a handy way to see values of expressions across time.
 // It can be really useful for debugging
 func fibonacci(n: Int) -> Int {
@@ -72,6 +74,7 @@ fibonacci(5)
 
 
 //: ## Map, Filter, Reduce
+
 struct Attendee {
     
     let name: String
@@ -98,6 +101,7 @@ maggiorenni.reduce(0, combine: +) / maggiorenni.count
 
 
 //: ## Functional compositions
+
 // Box is just a workaround to the Swift compiler not allowing enums with multiple variable-size associated values.
 // Hopefully the Swift team will address the issue soon
 class Box<T> {
@@ -182,4 +186,3 @@ func lift(num: Double) -> Result<Double> {
 
 let result2 = lift(n) >>> inverse >>> squareRoot >>> logarithm >>> inverse
 println(description(result2))
-
